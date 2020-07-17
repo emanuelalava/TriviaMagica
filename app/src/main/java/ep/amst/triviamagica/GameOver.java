@@ -21,10 +21,14 @@ public class GameOver extends AppCompatActivity {
         txt = findViewById(R.id.text);
         texto = texto+intentos+" intentos";
         txt.setText(texto);
+        
     }
 
     public void cerraraplicion(View view){
-        finish();
+        Intent i = new Intent(this,MainActivity.class);
+        i.putExtra("Cerrar","TRUE");
+        startActivity(i);
+
     }
     public void volveralmenu(View view){
         Intent intent = new Intent(this, MainActivity.class);
