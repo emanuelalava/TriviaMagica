@@ -31,34 +31,29 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        System.out.println("ENTRO");
         setupOrden();
         setupPreguntas();
         setUpControls();
         showQuestion();
-        System.out.println("ENTRO2");
 
     }
 
     public void onButtonClick(View v){
         Button btn = findViewById(v.getId());
         String respuesta = (String) btn.getText();
-        System.out.println(respuesta);
         if (respuesta.equals(CURRENT_CORRECT_ANSWER)){
             CURRENT_ORDEN= CURRENT_ORDEN+1;
             if (CURRENT_ORDEN>4){
-//            Intent i = new Intent(this,Win.class);
-//            startActivity(i);
-                System.out.println("GANASTE");
+            Intent i = new Intent(this,Win.class);
+            startActivity(i);
             }else {
             showQuestion();
-            System.out.println("SIGUIENTE PREGUNTA");}
+            }
 
         }
         else{
-//            Intent i = new Intent(this,GameOver.class);
-//            startActivity(i);
-            System.out.println("PERDISTE");
+            Intent i = new Intent(this,GameOver.class);
+            startActivity(i);
 
         }
 
@@ -79,7 +74,6 @@ public class GameActivity extends AppCompatActivity {
             if (!ORDEN.contains(n)){
                 ORDEN.add(n);
             }
-            System.out.println(ORDEN.size());
         }
     }
 
@@ -91,7 +85,7 @@ public class GameActivity extends AppCompatActivity {
         r1.add("Anita");
         r1.add("Olaf");
         String rc1 = "Elsa";
-        Pregunta q1 = new Pregunta(p1,r1,rc1);
+        Pregunta q1 = new Pregunta(p1,r1,rc1,R.drawable.frozen);
 
         String p2 = "¿Como se llama el personaje principal de Spider-Man?";
         ArrayList<String> r2 = new ArrayList<String>();
@@ -100,7 +94,7 @@ public class GameActivity extends AppCompatActivity {
         r2.add("Peter");
         r2.add("Gandalf");
         String rc2 = "Peter";
-        Pregunta q2 = new Pregunta(p2,r2,rc2);
+        Pregunta q2 = new Pregunta(p2,r2,rc2,R.drawable.spiderman);
 
         String p3 = "¿En qué año se estreno Baby Driver?";
         ArrayList<String> r3 = new ArrayList<String>();
@@ -109,7 +103,7 @@ public class GameActivity extends AppCompatActivity {
         r3.add("2018");
         r3.add("1996");
         String rc3 = "2017";
-        Pregunta q3 = new Pregunta(p3,r3,rc3);
+        Pregunta q3 = new Pregunta(p3,r3,rc3,R.drawable.babydriver);
 
         String p4 = "¿Quien dirigió la pelicula Alita:Battle Angel?";
         ArrayList<String> r4 = new ArrayList<String>();
@@ -118,7 +112,7 @@ public class GameActivity extends AppCompatActivity {
         r4.add("Steven Spilberg");
         r4.add("Martin Scorsese");
         String rc4 = "Robert Rodriguez";
-        Pregunta q4 = new Pregunta(p4,r4,rc4);
+        Pregunta q4 = new Pregunta(p4,r4,rc4,R.drawable.alita);
 
         String p5 = "¿En que año se estrenó Titánic?";
         ArrayList<String> r5 = new ArrayList<String>();
@@ -127,7 +121,7 @@ public class GameActivity extends AppCompatActivity {
         r5.add("1995");
         r5.add("1997");
         String rc5 = "1997";
-        Pregunta q5 = new Pregunta(p5,r5,rc5);
+        Pregunta q5 = new Pregunta(p5,r5,rc5,R.drawable.titanic);
 
         PREGUNTAS.add(q1);
         PREGUNTAS.add(q2);
@@ -137,17 +131,13 @@ public class GameActivity extends AppCompatActivity {
     }
 
     void showQuestion(){
-        System.out.println("CURRENT_ORDEN");
 
-        System.out.println(CURRENT_ORDEN);
-        System.out.println(ORDEN.toString());
 
         int orden = ORDEN.get(CURRENT_ORDEN);
-        System.out.println("ORDEN");
-        System.out.println(orden);
+
 
         Pregunta pregunta = PREGUNTAS.get(orden);
-//        imageview.setImageDrawable(getDrawable(R.drawable.));
+        imageview.setImageDrawable(getDrawable(pregunta.getImageId()));
         questionView.setText(pregunta.getPREGUNTA());
         b1.setText(pregunta.getRESPUESTAS().get(0));
         b2.setText(pregunta.getRESPUESTAS().get(1));
@@ -155,7 +145,6 @@ public class GameActivity extends AppCompatActivity {
         b4.setText(pregunta.getRESPUESTAS().get(3));
         CURRENT_CORRECT_ANSWER = pregunta.getRESPUESTA_CORRECTA();
 
-        System.out.println("TERMINA SHOW");
     }
 
 
