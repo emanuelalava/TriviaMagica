@@ -5,40 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/logo" />
+    tools:context=".Win">
 
     <TextView
-        android:id="@+id/juego"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="Trivia Magica"
-        android:textSize="36sp" />
+        android:text="Ha ganado una entrada al cine!"
+        android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/empezar"
+    <ImageView
+        android:id="@+id/feliz"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/feliz" />
+
+    <ImageView
+        android:id="@+id/codigo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:gravity="center_horizontal"
-        android:onClick="empezarjuego"
-        android:text="Empezar" />
+        android:src="@drawable/descarga" />
 
-    <TextView
-        android:id="@+id/creditos"
+    <Button
+        android:id="@+id/Salir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="120dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        android:text="Desarrollado por Winter Alavar y Cesar Coloma" />
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:onClick="cerraraplicion"
+        android:text="SALIR" />
+
+
 </LinearLayout>

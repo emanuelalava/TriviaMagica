@@ -53,6 +53,8 @@ public class GameActivity extends AppCompatActivity {
         }
         else{
             Intent i = new Intent(this,GameOver.class);
+            String intentos = CURRENT_ORDEN+1+"";
+            i.putExtra("intentos",intentos);
             startActivity(i);
 
         }
