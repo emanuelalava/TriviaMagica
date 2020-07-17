@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".GameOver">
     <ImageView
+        android:id="@+id/triste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/caratriste"
         />
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lo siento ha perdido"
@@ -24,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Empezar"
+        android:text="Salir"
         android:onClick="cerraraplicion"
         />
     <Button

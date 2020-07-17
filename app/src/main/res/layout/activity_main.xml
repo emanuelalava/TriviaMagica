@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/juego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Trivia Magica"
@@ -22,11 +23,13 @@
         android:onClick="empezarjuego"
     />
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         />
     <TextView
+        android:id="@+id/creditos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Desarrollado por Winter Alavar y Cesar Coloma"

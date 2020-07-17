@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Win">
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ha ganado una entrada al cine!"
@@ -23,11 +24,13 @@
         android:onClick="cerraraplicion"
         />
     <ImageView
+        android:id="@+id/feliz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/feliz"
         />
     <ImageView
+        android:id="@+id/codigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/descarga"
