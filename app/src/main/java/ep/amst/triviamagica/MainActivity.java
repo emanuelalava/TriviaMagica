@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = getIntent();
         cerrar = i.getStringExtra("Cerrar");
         System.out.println(cerrar);
-        if (cerrar != null){
+        if (cerrar != null){System.out.println("Saliendo");
             finish();
             System.exit(0);
         }

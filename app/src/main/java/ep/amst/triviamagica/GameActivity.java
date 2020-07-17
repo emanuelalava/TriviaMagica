@@ -23,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
     Button b2;
     Button b3;
     Button b4;
-
+    String cerrar;
 
 
 
@@ -31,6 +31,15 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+                Intent i = getIntent();
+        cerrar = i.getStringExtra("Cerrar");
+        System.out.println(cerrar);
+        if (cerrar != null){
+            System.out.println("SALIENDO");
+            android.os.Process.killProcess(android.os.Process.myPid());
+            finish();
+            System.exit(0);
+        }
         setupOrden();
         setupPreguntas();
         setUpControls();

@@ -24,7 +24,6 @@ public class Win extends AppCompatActivity {
 
     public void cerraraplicion(View view){
         Intent i = new Intent(this,MainActivity.class);
-        i.putExtra("Cerrar","TRUE");
         startActivity(i);
 
     }
